@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07316f">
+  <title>Movia Mobility Indonesia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar"><div class="container"><span><strong>Promo pengguna baru:</strong> Diskon 30% dengan kode MOVIABARU</span><span>Layanan pelanggan 24 jam</span></div></div>
+  <header class="header"><nav class="nav container">
+    <button class="brand" data-route="home" aria-label="Beranda Movia"><img src="assets/movia-logo-wide.png" alt="Movia Mobility Indonesia"></button>
+    <button class="menu-button" id="menuButton" aria-label="Buka menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link active" data-route="home">Beranda</button>
+      <button class="nav-link" data-route="order">Pesan</button>
+      <button class="nav-link product-nav" data-route="product">Product <span aria-hidden="true">⌄</span></button>
+      <button class="nav-link" data-route="promo">Promo</button>
+      <button class="nav-link" data-route="blog">Blog</button>
+      <button class="nav-link" data-route="news">News</button>
+      <button class="nav-link" data-route="about">Tentang</button>
+      <button class="nav-link" data-route="faq">FAQ</button>
+      <button class="nav-link" data-route="contact">Kontak</button>
+    </div>
+    <button class="profile-button" id="profileButton" aria-label="Akun pengguna" title="Akun pengguna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20v-2.2a6.5 6.5 0 0 1 13 0V20"></path></svg></button>
+  </nav></header>
+
+  <main>
+    <div class="page active" id="page-home">
+      <section class="hero"><div class="container hero-inner"><div class="hero-copy">
+        <p class="eyebrow light">Mobility for a better tomorrow</p>
+        <h1>Teman di setiap perjalanan.</h1>
+        <p>Movia menghadirkan layanan mobilitas yang aman, nyaman, dan tepercaya untuk perjalanan pribadi, bandara, kelompok, hingga kebutuhan perusahaan.</p>
+        <div class="hero-actions"><button class="button button-yellow" data-route="product">Jelajahi Product</button></div>
+      </div></div></section>
+
+      <section class="service-strip-section"><div class="container">
+        <div class="section-heading compact"><div><p class="eyebrow">Ekosistem Movia</p><h2>Lebih dari sekadar transportasi</h2></div></div>
+        <div class="service-carousel"><button class="carousel-arrow" id="servicePrev" aria-label="Sebelumnya">‹</button><div class="carousel-viewport"><div class="carousel-track" id="serviceTrack"></div></div><button class="carousel-arrow" id="serviceNext" aria-label="Berikutnya">›</button></div>
+      </div></section>
+
+      <section class="section"><div class="container">
+        <div class="section-heading"><div><p class="eyebrow">Pilihan product</p><h2>Perjalanan untuk setiap kebutuhan</h2><p>Pilih product Movia yang sesuai dengan tujuan, jumlah penumpang, dan kebutuhan perjalananmu.</p></div><button class="text-button" data-route="product">Lihat semua product →</button></div>
+        <div class="featured-services" id="featuredServices"></div>
+      </div></section>
+
+      <section class="section soft"><div class="container"><div class="section-heading"><div><p class="eyebrow">Keunggulan Movia</p><h2>Mengapa memilih kami?</h2></div></div><div class="advantage-grid">
+        <article><span class="advantage-icon">✓</span><h3>Aman & Terverifikasi</h3><p>Pengemudi melewati verifikasi dan armada diperiksa secara berkala.</p></article>
+        <article><span class="advantage-icon">24</span><h3>Dukungan 24 Jam</h3><p>Tim bantuan selalu tersedia ketika kamu membutuhkan pendampingan.</p></article>
+        <article><span class="advantage-icon">♢</span><h3>Armada Nyaman</h3><p>Kendaraan bersih, terawat, dan sesuai kebutuhan setiap perjalanan.</p></article>
+        <article><span class="advantage-icon">◎</span><h3>Jangkauan Luas</h3><p>Layanan personal dan perusahaan untuk Bandung Raya dan sekitarnya.</p></article>
+      </div></div></section>
+
+      <section class="section promo-section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Promo terbaru</p><h2>Perjalanan lebih hemat</h2></div><div class="slider-controls"><button id="promoPrev">‹</button><button id="promoNext">›</button></div></div><div class="promo-slider" id="promoSlider"></div><div class="slider-dots" id="promoDots"></div></div></section>
+
+      <section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Blog Movia</p><h2>Inspirasi perjalanan</h2></div><button class="text-button" data-route="blog">Lihat blog →</button></div><div class="content-grid" id="homeBlog"></div></div></section>
+      <section class="section soft"><div class="container"><div class="section-heading"><div><p class="eyebrow">Movia News</p><h2>Kabar terbaru dari Movia</h2></div><button class="text-button" data-route="news">Lihat semua berita →</button></div><div class="news-list" id="homeNews"></div></div></section>
+      <section class="section"><div class="container testimonial-layout"><div>
+        <p class="eyebrow">Cerita pelanggan</p><h2>Apa kata mereka?</h2><p class="section-copy">Pengalaman pelanggan membantu Movia memberikan layanan yang semakin baik.</p>
+        <div class="testimonial-list" id="testimonialList"></div>
+      </div><form class="form-card" id="testimonialForm"><h3>Kirim testimoni</h3><div class="field"><label>Nama</label><input id="testimonialName" required minlength="2" maxlength="80"></div><div class="field"><label>Rating</label><select id="testimonialRating"><option value="1">1 - Sangat buruk</option><option value="2">2 - Kurang</option><option value="3">3 - Cukup</option><option value="4">4 - Puas</option><option value="5" selected>5 - Sangat puas</option></select></div><div class="field"><label>Testimoni</label><textarea id="testimonialText" rows="5" required minlength="10" maxlength="500" placeholder="Ceritakan pengalamanmu menggunakan Movia"></textarea></div><button class="button button-primary full">Kirim & Simpan</button></form></div></section>
+    </div>
+
+    <div class="page" id="page-product"><section class="page-hero"><div class="container"><p class="eyebrow light">Product Movia</p><h1>Mobilitas lengkap dalam satu tempat</h1><p>Pilih product pribadi, kelompok, pengiriman, atau solusi perusahaan.</p></div></section><section class="product-tabs-section"><div class="container"><div class="service-carousel product-carousel"><button class="carousel-arrow" id="productPrev" aria-label="Product sebelumnya">‹</button><div class="carousel-viewport"><div class="carousel-track" id="productTrack"></div></div><button class="carousel-arrow" id="productNext" aria-label="Product berikutnya">›</button></div></div></section><section class="section product-detail-section"><div class="container"><div id="productDetail" class="product-detail"></div><div class="section-heading product-grid-heading"><div><p class="eyebrow">Semua product</p><h2>Pilih halaman product Movia</h2></div></div><div class="all-service-grid" id="allServices"></div></div></section></div>
+
+    <div class="page" id="page-order"><section class="page-hero"><div class="container"><p class="eyebrow light">Pemesanan</p><h1>Pesan perjalanan Movia</h1><p>Lengkapi detail perjalanan. Kamu perlu masuk ke akun sebelum mengirim pesanan.</p></div></section><section class="section soft"><div class="container booking-layout"><form class="form-card" id="orderForm"><h2>Detail perjalanan</h2><div class="field"><label>Product</label><select id="orderService"><option>Taxi Service</option><option>Car Rental</option><option>Airport Transfer</option><option>Shuttle Service</option><option>Charter Bus</option><option>Logistic</option><option>Advertising Solution</option><option>Movia Kirim</option><option>Corporate Solution</option><option>Hotel & Resort</option><option>Caready</option><option>Supporting Service</option></select></div><div class="field"><label>Jenis mobil</label><select id="orderVehicle"></select></div><div class="field"><label>Lokasi penjemputan</label><input id="orderPickup" required></div><div class="field"><label>Tujuan</label><input id="orderDestination" required></div><div class="two-fields"><div class="field"><label>Tanggal</label><input id="orderDate" type="date" required></div><div class="field"><label>Waktu</label><input id="orderTime" type="time" required></div></div><button class="button button-primary full">Kirim Pesanan</button></form><aside class="booking-info"><h3>Informasi pemesanan</h3><p>Tim Movia akan mengonfirmasi ketersediaan armada, detail perjalanan, jenis mobil, dan estimasi biaya melalui nomor telepon pada profil.</p><button class="button button-outline full" id="orderCS">Tanya AI Movia</button></aside></div></section></div>
+
+    <div class="page" id="page-promo"><section class="page-hero"><div class="container"><p class="eyebrow light">Promo Movia</p><h1>Lebih hemat di setiap perjalanan</h1></div></section><section class="section soft"><div class="container promo-page-grid" id="promoPage"></div></section></div>
+    <div class="page" id="page-blog"><section class="page-hero"><div class="container"><p class="eyebrow light">Blog Movia</p><h1>Wawasan dan inspirasi mobilitas</h1></div></section><section class="section"><div class="container content-grid" id="blogGrid"></div></section></div>
+    <div class="page" id="page-news"><section class="page-hero"><div class="container"><p class="eyebrow light">Movia News</p><h1>Kabar terbaru dari perusahaan</h1></div></section><section class="section soft"><div class="container news-list" id="newsGrid"></div></section></div>
+    <div class="page" id="page-about"><section class="page-hero"><div class="container"><p class="eyebrow light">Tentang Movia</p><h1>Mobility for a better tomorrow</h1></div></section><section class="section"><div class="container about-layout"><img src="assets/movia-logo-wide.png" alt="Logo Movia"><div><p class="eyebrow">Cerita kami</p><h2>Menghubungkan orang dengan tujuan</h2><p>Movia adalah bisnis mobilitas digital Indonesia yang menghadirkan perjalanan aman, nyaman, dan tepercaya. Nama Movia menggambarkan pergerakan melalui rute menuju tujuan dan peluang baru.</p><div class="value-grid"><div><strong>Aman</strong><span>Verifikasi dan standar keselamatan.</span></div><div><strong>Nyaman</strong><span>Armada bersih dan terawat.</span></div><div><strong>Terhubung</strong><span>Layanan personal dan perusahaan.</span></div><div><strong>Berkelanjutan</strong><span>Mobilitas yang lebih baik.</span></div></div></div></div></section></div>
+    <div class="page" id="page-faq"><section class="page-hero"><div class="container"><p class="eyebrow light">Bantuan</p><h1>Pertanyaan yang sering diajukan</h1></div></section><section class="section soft"><div class="container faq-list" id="faqList"></div></section></div>
+    <div class="page" id="page-contact"><section class="page-hero"><div class="container"><p class="eyebrow light">Hubungi Kami</p><h1>Kami siap membantu</h1></div></section><section class="section"><div class="container contact-layout"><div class="contact-cards"><div><strong>Pusat bantuan 24 jam</strong><span>1500 668</span></div><div><strong>WhatsApp</strong><span>+62 812-6688-6688</span></div><div><strong>Email</strong><span>bantuan@movia.id</span></div><div><strong>Main Office Movia</strong><span>Jl. Soekarno Hatta No. 668, Bandung, Jawa Barat 40286</span></div></div><form class="form-card generic-form"><h2>Kirim pesan</h2><div class="field"><label>Nama</label><input required></div><div class="field"><label>Email</label><input type="email" required></div><div class="field"><label>Pesan</label><textarea rows="5" required></textarea></div><button class="button button-primary">Kirim Pesan</button></form></div></section></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/movia-logo-wide.png" alt="Movia Mobility Indonesia">
+        <p>Mobilitas aman, nyaman, dan tepercaya untuk setiap perjalanan.</p>
+        <h4>Main Office</h4>
+        <p>Jl. Soekarno Hatta No. 668<br>Bandung, Jawa Barat 40286<br>Indonesia</p>
+        <h4 class="connect-title">Connect with us</h4>
+        <div class="socials">
+          <a href="https://facebook.com/moviaindonesia" target="_blank" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M14 8.2h2.5V5.1c-.4-.1-1.9-.2-3.1-.2-3 0-5 1.8-5 5.2V13H5v3.5h3.4V24h4.1v-7.5h3.3l.5-3.5h-3.8v-2.6c0-1 .3-2.2 1.5-2.2Z"/></svg></a>
+          <a href="https://instagram.com/moviaindonesia" target="_blank" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="social-dot" cx="17.6" cy="6.7" r="1"/></svg></a>
+          <a href="https://x.com/moviaindonesia" target="_blank" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg></a>
+          <a href="https://youtube.com/@moviaindonesia" target="_blank" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect class="social-fill" x="2" y="5.5" width="20" height="13" rx="4"/><path class="youtube-play" d="m10 9 6 3-6 3Z"/></svg></a>
+          <a href="https://linkedin.com/company/moviaindonesia" target="_blank" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M5 9h3v10H5Zm1.5-5A1.8 1.8 0 1 1 6.5 7.6 1.8 1.8 0 0 1 6.5 4ZM10 9h3v1.4c.8-1.1 1.9-1.8 3.6-1.8 3.1 0 3.9 2 3.9 4.8V19h-3v-5c0-1.2 0-2.7-1.8-2.7s-2.1 1.3-2.1 2.7v5h-3Z"/></svg></a>
+          <a href="https://tiktok.com/@moviaindonesia" target="_blank" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a4.3 4.3 0 1 1-3.8-4.3M14 4c.7 2.4 2.2 3.8 4.6 4.2"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Product</h4><button data-route="product" data-product="Taxi Service">Taxi Service</button><button data-route="product" data-product="Airport Transfer">Airport Transfer</button><button data-route="product" data-product="Shuttle Service">Shuttle Service</button><button data-route="product" data-product="Charter Bus">Charter Bus</button></div>
+      <div><h4>Perusahaan</h4><button data-route="about">Tentang Movia</button><button data-route="promo">Promo</button><button data-route="blog">Blog</button><button data-route="news">News</button></div>
+      <div class="footer-help"><h4>Bantuan</h4><button data-route="faq">FAQ</button><button data-route="contact">Hubungi Kami</button><button id="footerCS">AI & Customer Service</button><div class="store-badges"><a href="#" aria-label="Get it on Google Play"><small>GET IT ON</small><strong>Google Play</strong></a><a href="#" aria-label="Download on the App Store"><small>Download on the</small><strong>App Store</strong></a></div></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Movia Mobility Indonesia. Tugas Kewirausahaan Digital.</span><span>Kebijakan Privasi · Syarat & Ketentuan</span></div>
+  </footer>
+
+  <button class="floating-cs" id="floatingCS" aria-label="Chat dengan Movia">CS</button>
+
+  <div class="modal hidden" id="csModal"><div class="modal-box chat-box"><button class="modal-close" data-close="csModal">×</button><div class="chat-head"><img src="assets/movia-logo-wide.png" alt="Movia"><div><strong>Movia Assistant</strong><span>Online 24 jam</span></div></div><div id="csIdentity"><h3>Sebelum memulai chat</h3><p>Masukkan identitas agar tim dapat membantu jika chat perlu diteruskan ke CS.</p><form id="csIdentityForm"><div class="field"><label>Nama</label><input id="csName" required></div><div class="field"><label>Nomor HP</label><input id="csPhone" type="tel" required placeholder="08xxxxxxxxxx"></div><button class="button button-primary full">Mulai Chat AI</button></form></div><div id="chatArea" class="hidden"><div class="chat-messages" id="chatMessages"></div><form class="chat-input" id="chatForm"><input id="chatText" required placeholder="Tulis pertanyaanmu"><button>Kirim</button></form><a class="button whatsapp-button full" id="realCS" target="_blank">Hubungi CS Asli via WhatsApp</a></div></div></div>
+
+  <div class="modal hidden" id="accountModal"><div class="modal-box"><button class="modal-close" data-close="accountModal">×</button><div class="account-logo"><img src="assets/movia-logo-wide.png" alt="Movia"></div><div id="authPanel"><h2 id="authTitle">Masuk ke Movia</h2><form id="authForm"><div class="field register-only hidden"><label>Nama lengkap</label><input id="authName"></div><div class="field register-only hidden"><label>Nomor HP</label><input id="authPhone"></div><div class="field"><label>Email</label><input id="authEmail" type="email" required></div><div class="field"><label>Kata sandi</label><input id="authPassword" type="password" minlength="6" required></div><button class="button button-primary full" id="authSubmit">Masuk</button></form><button class="switch-auth" id="switchAuth">Belum punya akun? Daftar</button></div><div id="profilePanel" class="hidden"><h2>Profil Saya</h2><form id="profileForm"><div class="field"><label>Nama</label><input id="profileName" required></div><div class="field"><label>Nomor HP</label><input id="profilePhone" required></div><div class="field"><label>Email</label><input id="profileEmail" type="email" required></div><button class="button button-primary full">Simpan Profil</button></form><button class="button button-outline full" id="logoutButton">Keluar</button></div></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
